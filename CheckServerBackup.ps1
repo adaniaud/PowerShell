@@ -19,7 +19,7 @@ $backupDuration=(New-TimeSpan -Start $job.StartTime -End $job.EndTime).ToString(
 $mailBody=@"
 Backup date : $date
 Duration : $backupDuration
-$mailBody+="Succed log :`n"+(Get-content $job.SuccessLogPath)
+$mailBody+="Success log :`n"+(Get-content $job.SuccessLogPath)
 "@
 
 If($job.HResult -eq 0){
