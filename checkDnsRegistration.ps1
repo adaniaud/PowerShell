@@ -9,8 +9,9 @@ foreach ($host in $hosts) {   
     {         
         $ip = (Resolve-DnsName -Name "$host" -Server $DNS -ErrorAction Stop).ip4address        
         Write-Host "DNS record found for $host - ip : $ip"    
-    }        
-        Catch [System.ComponentModel.Win32Exception]     
+    }
+            
+    Catch [System.ComponentModel.Win32Exception]     
     {         
     Write-Host "Host $host isn't registered in $DNS"     
     }
